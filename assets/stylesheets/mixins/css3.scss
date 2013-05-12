@@ -1,0 +1,48 @@
+@mixin box-shadow($left: 0px, $top: 0px, $blur: 4px, $color: #ccc, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $left $top $blur $color;
+    -moz-box-shadow:inset $left $top $blur $color;
+    box-shadow:inset $left $top $blur $color;
+  } @else {
+    -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+  }
+}
+
+@mixin border-radius($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin bottom-border-radius($radius: 0.5em) {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin top-border-radius($radius: 0.5em) {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -moz-border-radius-topright: $radius;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin gradient($from, $to) {
+  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background: -moz-linear-gradient(top,  $from, $to);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
