@@ -13,7 +13,6 @@
                 e.preventDefault();
 
                 var responseContainer = $(this).siblings('.response_container'),
-                    codeContainer = $(this).siblings('.code_snippet'),
                     codeTemplate = $(codeContainer.data('template')).html(),
                     selectFields = $(this).children('select, input'),
                     requestParams = {},
@@ -33,9 +32,6 @@
                         templateData.params.push({key: key, value: value});
                     }
                 }
-
-                // Render the PHP code snippet
-                codeContainer.html(Mustache.to_html(codeTemplate, templateData));
 
                 // Make the request to api.php!
                 $.ajax({

@@ -9,20 +9,6 @@
     	<!--[if lt IE 9]>
       	<script src="assets/javascripts/html5shiv.js"></script>
     	<![endif]-->
-    	<style>
-        	section{
-            	border-bottom: 1px solid #cccccc;
-        	}
-            	.code_snippet{
-
-            	}
-            	.response_container{
-                	overflow: scroll;
-                	width: 50%;
-                	height: 300px;
-                	border:1px solid #cccccc;
-            	}
-    	</style>
 	</head>
 	<body>
 		<h1><i class="icon-search"></i>HuluRandom</h1>
@@ -58,25 +44,9 @@
             </select>
             <button type="submit">Get It!</button>
         </form>
-        <h3>Code:</h3>
-        <pre class="code_snippet" data-method="getVideos" data-template="#code_template">No request yet...</pre>
         <h3>Response:</h3>
         <pre class="response_container">No data yet...</pre>
     </section>
-    <script src="http://raw.github.com/janl/mustache.js/master/mustache.js"></script>
-    <script id="code_template" type="text/html">
-$hulu = new Hulu();
-$options = array(
-    {{#params}}
-    "{{key}}" => "{{value}}",
-    {{/params}}
-);
-$companies = $hulu->{{method}}($options);
-    </script>
-    <script id="search_template" type="text/html">
-$hulu = new Hulu();
-$results = $hulu->search({{params.0.value}}, {{params.1.value}}, {{params.2.value}});
-    </script>
 		<script src="assets/jquery.min.js" type='text/javascript'></script>
 		<script src='assets/application.min.js' type='text/javascript'></script>
 	</body>
