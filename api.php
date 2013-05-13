@@ -18,7 +18,7 @@
                 $vidDescription = $video->description;
                 $eid = $video->eid;
                 if (!empty($video)) {
-                    echo '<div class="container"><div class="row"><div class="span3 sidebar">';
+                    echo '<div class="container video"><div class="row"><div class="span3 sidebar">';
                     echo '<h3>' . $videoTitle . '</h3>';
                     echo '<img src="' . $largeThumb . '"/>';
                     echo '<h4>Length: ' . gmdate("H:i", intval($vidDuration)) . '</h4>';
@@ -31,7 +31,7 @@
                     echo '</div></div></div>';
                 }
             }
-            echo '<div class="hidden-phone container centered"><a href="/" class="btn btn-large btn-warning">Reset</a></div>';
+            echo '<div class="hidden-phone container centered"><a href="/" class="btn btn-large btn-reset">Reset</a></div>';
             exit;
             break;
         default:

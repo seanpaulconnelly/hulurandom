@@ -5,6 +5,11 @@
 	}
 }
 
+/* hack out the extra returned .container until I figure out why it's only doing it on MediaTemple (and not locally) */
+.video:nth-child(2){
+	display:none;
+}
+
 .sidebar {
 	border-right:1px solid #dcdcdc;
 	margin-right:-1px;

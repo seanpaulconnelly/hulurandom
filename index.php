@@ -52,7 +52,7 @@ function videoSpinner() {
     	<div class="container">
     		<div class="row">
     			<div class="span12">
-    				<p>This site was designed to make evenings watcing TV more interesting, and is not affiliated whatsoever with Hulu.</p>
+    				<p>This site was designed to make evenings watcing TV more interesting.  It's not affiliated whatsoever with Hulu.</p>
     			</div>
     		</div>
     	</div>
