@@ -16,6 +16,7 @@
                     codeContainer = $(this).siblings('.code_snippet'),
                     codeTemplate = $(codeContainer.data('template')).html(),
                     selectFields = $(this).find('input'),
+                    loader = $(this).find('.loader'),
                     requestParams = {},
                     templateData = {
                         method: codeContainer.data('method'),
@@ -34,15 +35,20 @@
                     }
                 }
 
+                // Show the loader
+                loader.removeClass('hide');
+
                 // Make the request to api.php!
                 $.ajax({
                     url: $(this).attr('action'),
                     type: 'GET',
                     data: requestParams,
                     success: function (response) {
+                        // Hide the loader
+                        loader.addClass('hide');
                         // Render the response and display it in the response container
                         console.log(response)
-                        responseContainer.text(response);
+                        responseContainer.html(response);
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
                         console.log(textStatus);
