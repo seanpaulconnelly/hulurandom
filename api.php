@@ -12,12 +12,16 @@
             
             foreach ($videos as $video) {
                 $videoId = $video->video_id;
-                $largeThumb = $video->thumbnail_url_16x9_large;
+                $largeThumb = $video->thumbnail_url_16x9_medium;
                 $vidDuration = $video->duration;
+                $vidDescription = $video->description;
+                $eid = $video->eid;
                 if (!empty($video)) {
-                    echo $videoId . '<br/>';
+                    echo '<a target="_blank" href="http://hulu.com/watch/' . $videoId . '">Watch on Hulu</a><br/>';
                     echo '<img src="' . $largeThumb . '"/><br/>';
                     echo gmdate("H:i:s", intval($vidDuration));
+                    echo '<iframe src="http://www.hulu.com/embed.html?eid=' . $eid . '" width="640px" height="360px" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>';
+                    echo $vidDescription;
                 }
             }
             exit;
