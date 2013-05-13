@@ -1,0 +1,28 @@
+.response_container {
+	background:#f1f1f1;
+	.container {
+		padding-top:50px;
+	}
+}
+
+.sidebar {
+	border-right:1px solid #dcdcdc;
+	margin-right:-1px;
+}
+
+footer {
+	padding-top:50px;
+	padding-bottom:15px;
+	@include gradient(#f1f1f1, #ddd);
+	p {
+		text-align:center;
+		color:#669332;
+	}
+}
+
+@include respond-to(mobile) {
+	.sidebar {
+		border-right:none;
+		margin-right:0;
+	}
+}

@@ -1,0 +1,52 @@
+body {
+	padding-left:0;
+	padding-right:0;
+}
+
+header {
+	background:#000;
+	@include gradient(#000, #444);
+	h1{
+		font-family: 'Muli', helvetica, arial, sans-serif;
+		font-size:1.9em;
+		color:#999;
+		span { 
+			color:#83c23b;
+		}
+	}
+}
+
+.leader {
+	background:#999;
+	@include gradient(#444, #fff);
+	padding-top:50px;
+	h2 {
+		text-align:center;
+		font-size:2.5em;
+		color:#f1f1f1;
+		text-shadow:1px 1px 1px #333;
+		font-weight:400;
+		padding-bottom:15px;
+	}
+	form {
+		text-align:center;
+		padding-bottom:30px;
+	}
+	.btn {
+		font-size:2.1em;
+		padding:20px 50px;
+		font-family: 'Muli', helvetica, arial, sans-serif;
+		color:#efefef;
+	}
+	.loader {
+		width:18px;
+		height:15px;
+	}
+}
+
+@include respond-to(mobile){
+	.mobile-padding {
+		padding-left:20px;
+		padding-right:20px;
+	}
+}
