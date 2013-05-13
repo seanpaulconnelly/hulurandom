@@ -12,7 +12,13 @@
             
             foreach ($videos as $video) {
                 $videoId = $video->video_id;
-                echo $videoId . '<br/>';
+                $largeThumb = $video->thumbnail_url_16x9_large;
+                $vidDuration = $video->duration;
+                if (!empty($video)) {
+                    echo $videoId . '<br/>';
+                    echo '<img src="' . $largeThumb . '"/><br/>';
+                    echo gmdate("H:i:s", intval($vidDuration));
+                }
             }
             exit;
             break;
