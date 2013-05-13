@@ -16,8 +16,12 @@ footer {
 	@include gradient(#f1f1f1, #ddd);
 	p {
 		text-align:center;
-		color:#669332;
+		color:#777;
 	}
+}
+
+.centered {
+	text-align:center;
 }
 
 @include respond-to(mobile) {

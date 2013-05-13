@@ -31,6 +31,7 @@
                     echo '</div></div></div>';
                 }
             }
+            echo '<div class="hidden-phone container centered"><a href="/" class="btn btn-large btn-warning">Reset</a></div>';
             exit;
             break;
         default:
