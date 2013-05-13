@@ -53,7 +53,7 @@ function videoSpinner() {
     	<div class="container">
     		<div class="row">
     			<div class="span12">
-            <p class="visible-phone">On your phone?  Download the Hulu app or come back with your computer to stream right from the site.</p>
+            <p class="alert alert-warning visible-phone">On your phone?  Download the Hulu app or come back with your computer to stream right from the site.</p>
     				<p>A Sunday science experiment by <a target="_blank" href="http://www.linkedin.com/in/connellysean/">Sean Connelly</a></p>
             <p>This site was designed to make evenings watcing TV more interesting.  It's not affiliated whatsoever with Hulu.</p>
     			</div>
