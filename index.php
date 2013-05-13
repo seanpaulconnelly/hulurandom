@@ -5,7 +5,8 @@ function videoSpinner() {
 	$xml = simplexml_load_file("http://m.hulu.com/videos?dp_id=hulu&order_by=desc&limit=%d&page=1&total=1");
 	$totalVideos = $xml->total_count;
 	$totalVideos = intval($totalVideos);
-	$huluRandom = mt_rand(2, $totalVideos);
+  // would be $totalVideos as the second param of mt_rand() if it wasn't so damn slow
+	$huluRandom = mt_rand(2, 200000);
 	echo $huluRandom;
 }
 ?>	
@@ -52,7 +53,7 @@ function videoSpinner() {
     	<div class="container">
     		<div class="row">
     			<div class="span12">
-    				<p>A Sunday science experiment by <a target="_blank" href="www.linkedin.com/in/connellysean/">Sean Connelly</a></p>
+    				<p>A Sunday science experiment by <a target="_blank" href="http://www.linkedin.com/in/connellysean/">Sean Connelly</a></p>
             <p>This site was designed to make evenings watcing TV more interesting.  It's not affiliated whatsoever with Hulu.</p>
     			</div>
     		</div>
