@@ -9,7 +9,12 @@
 
             // Call the method!
             $videos = $hulu->getVideos($_GET);
-            exit(print_r($videos));
+            
+            foreach ($videos as $video) {
+                $videoId = $video->video_id;
+                echo $videoId . '<br/>';
+            }
+            exit;
             break;
         default:
             // ...
