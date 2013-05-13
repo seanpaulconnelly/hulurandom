@@ -13,8 +13,9 @@
                 e.preventDefault();
 
                 var responseContainer = $(this).siblings('.response_container'),
+                    codeContainer = $(this).siblings('.code_snippet'),
                     codeTemplate = $(codeContainer.data('template')).html(),
-                    selectFields = $(this).children('select, input'),
+                    selectFields = $(this).find('input'),
                     requestParams = {},
                     templateData = {
                         method: codeContainer.data('method'),

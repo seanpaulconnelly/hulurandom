@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
@@ -15,33 +16,14 @@
 		<h2>Randomly pick something to watch on Hulu</h2>
 	<hr>
     <section>
-        <h2>Retrieving Video List</h2>
-        <h3>Options:</h3>
         <form action="api.php?method=getVideos" method="GET">
-            <label>Limit: </label>
-            <select name="limit">
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="30">30</option>
-            </select>
-            <label>Order by: </label>
-            <select name="order_by">
-                <option value="name%20asc">Name - Ascending</option>
-                <option value="name%20desc">Name - Descending</option>
-            </select>
-            <label>Page: </label>
-            <select name="page">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <label>Total only: </label>
-            <select name="total">
-                <option value="0">False</option>
-                <option value="1">True</option>
-            </select>
+            <!--
+            <input type="text" name="limit" value="1"/>
+            <input type="text" name="order_by" value="name%20desc"/>
+            <input type="text" name="order_by" value="name%20asc"/>
+            <input type="text" name="page" value="1"/>
+        	-->
+        	<input type="text" name="total" value="1"/>
             <button type="submit">Get It!</button>
         </form>
         <h3>Response:</h3>
@@ -49,5 +31,15 @@
     </section>
 		<script src="assets/jquery.min.js" type='text/javascript'></script>
 		<script src='assets/application.min.js' type='text/javascript'></script>
+<?php
+function videoSpinner() {	
+	//Generates a random integer based on the total number of total videos on Hulu
+	$xml = simplexml_load_file("http://m.hulu.com/videos?dp_id=hulu&order_by=desc&limit=%d&page=1&total=1");
+	$totalVideos = $xml->total_count;
+	$totalVideos = intval($totalVideos);
+	echo mt_rand(2, $totalVideos);
+}
+videoSpinner();
+?>	
 	</body>
 </html>
