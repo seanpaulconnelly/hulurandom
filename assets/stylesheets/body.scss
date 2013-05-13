@@ -30,6 +30,10 @@ footer {
 }
 
 @include respond-to(mobile) {
+	.response_container {
+		margin-left:-20px;
+		margin-right:-20px;
+	}
 	.sidebar {
 		border-right:none;
 		margin-right:0;
