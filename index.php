@@ -9,6 +9,30 @@ function videoSpinner() {
 	$huluRandom = mt_rand(2, 200000);
 	echo $huluRandom;
 }
+
+$quotes = array();
+$quotes[0] = "Patience is bitter, but its fruit is sweet.";
+$quotes[1] = "Patience, grasshopper.";
+$quotes[2] = "He that can have patience can have what he will.";
+$quotes[3] = "Time has no meaning, Love will endure..";
+$quotes[4] = "Our patience will achieve more than our force.";
+$quotes[5] = "Even a snail will eventually reach its destination.";
+$quotes[6] = "Well, we must wait for the future to show.";
+$quotes[7] = "Waiting is a form of passive persistence.";
+$quotes[8] = "A life is not a waste of time.";
+$quotes[9] = "Perfect love is perfectly patient.";
+$quotes[10] = "Patience is the direct antithesis of anger.";
+$quotes[11] = "Genius is eternal patience.";
+$quotes[12] = "Crushed again!";
+$quotes[13] = "Patience is learned through waiting.";
+$quotes[14] = "When you get mad, it's the time you lose.";
+$quotes[15] = "Patience is a conquering virtue.";
+$quotes[16] = "Learn a little patience. You never know what might be around the corner.";
+
+$num = count($quotes);
+
+$target = rand(0, $num-1);
+
 ?>	
 <!DOCTYPE html>
 <!-- Thanks: http://adammagana.com/ and Hulu -->
@@ -43,7 +67,7 @@ function videoSpinner() {
             			-->
             			<input type="hidden" name="page" value="<?php videoSpinner(); ?>"/>
             			<input type="hidden" name="total" value="0"/>
-            			<button class="btn btn-success btn-large" type="submit">Find <br class="visible-phone"/>Something! <span class="loader hide"><img src="assets/images/ajax-loader.gif"><br/><small>Patience is bitter, but its fruit is sweet.</small></span></button>
+            			<button class="btn btn-success btn-large" type="submit">Find <br class="visible-phone"/>Something! <span class="loader hide"><img src="assets/images/ajax-loader.gif"><br/><small><?php echo $quotes[$target]; ?></small></span></button>
         			</form>
         	<div class="response_container">
         	</div>
