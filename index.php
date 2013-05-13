@@ -1,4 +1,14 @@
 
+<?php
+function videoSpinner() {	
+	//Generates a random integer based on the total number of total videos on Hulu
+	$xml = simplexml_load_file("http://m.hulu.com/videos?dp_id=hulu&order_by=desc&limit=%d&page=1&total=1");
+	$totalVideos = $xml->total_count;
+	$totalVideos = intval($totalVideos);
+	$GLOBALS['huluRandom'] = mt_rand(2, $totalVideos);
+	echo $GLOBALS['huluRandom'];
+}
+?>	
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
@@ -17,29 +27,21 @@
 	<hr>
     <section>
         <form action="api.php?method=getVideos" method="GET">
-            <!--
             <input type="text" name="limit" value="1"/>
             <input type="text" name="order_by" value="name%20desc"/>
+            <!--
             <input type="text" name="order_by" value="name%20asc"/>
-            <input type="text" name="page" value="1"/>
-        	-->
-        	<input type="text" name="total" value="1"/>
-            <button type="submit">Get It!</button>
+            -->
+            <input type="text" name="page" value="<?php videoSpinner(); ?>"/>
+            <input type="text" name="total" value="0"/>
+        	
+        	
+            <button class="btn btn-success" type="submit">Get It! <span class="loader hide">combobulating...</span></button>
         </form>
         <h3>Response:</h3>
-        <pre class="response_container">No data yet...</pre>
+        <div class="response_container">No data yet...</div>
     </section>
 		<script src="assets/jquery.min.js" type='text/javascript'></script>
 		<script src='assets/application.min.js' type='text/javascript'></script>
-<?php
-function videoSpinner() {	
-	//Generates a random integer based on the total number of total videos on Hulu
-	$xml = simplexml_load_file("http://m.hulu.com/videos?dp_id=hulu&order_by=desc&limit=%d&page=1&total=1");
-	$totalVideos = $xml->total_count;
-	$totalVideos = intval($totalVideos);
-	echo mt_rand(2, $totalVideos);
-}
-videoSpinner();
-?>	
 	</body>
 </html>
